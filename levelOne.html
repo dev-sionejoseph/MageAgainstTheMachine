@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mage Against The Machine</title>
+    <link rel="stylesheet" href="levels.css">
 </head>
 <body>
     <main id='wrapper'>
@@ -11,27 +12,40 @@
             <div class="backgrounds" id="layer1"></div>
             <div class="backgrounds" id="layer2"></div>
             <div class="backgrounds" id="layer3"></div>
-            <div class="backgrounds" id="layer4"></div>
             <div id='playerContainer'>
                 <div id='player'>
-                    
+                    <p id='spellStatus'>vvvv</p>
+                    <img id='playerIMG' src="images/Fairy_03__ATTACK_000.png"/>  
                 </div>
                 <div id='machine'>
-                    
+                    <img id='machine1' src="images/idlerobot.gif" style = "height: 600px;"/>
                 </div>
+                <div class="backgrounds" id="layer4"></div>
             </div>
             <div id='portalWrap'>
                 <div id='portal'>
-                    <img src='#'/>
+                    <a href="levelOne.html"><img src='./images/portal.gif' style="height: 400px;"/></a>
                 </div>
             </div>
-            <div class="backgrounds" id="layer5"></div>
         </div>
         <div id='consoleWrap'>
-            <div class='consoles' id='consoleOne'>
+            <div class='consoles' id='consoleMain'>
+                <p class="stats" id="HP">Health:</p>
+                <p class="stats" id="powerLevel">Power Level:</p>
+                <p class="stats" id="attackSpells">Attack Spells Left:</p>
+                <p class="stats" id="shiftSpells">Shift Spells Left:</p>
+                <div id='buttonWrap'>
+                    <button class="spells" id='attackButton'>Attack Spell</button>
+                    <button class="spells" id='shiftButton'>Shift Spell</button>  
+                </div>
                 
             </div>
         </div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+    <script src='main.js' async defer></script>
 </body>
 </html>

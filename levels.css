@@ -1,19 +1,25 @@
 body {
     height: 1080px;
-    width: 1920px;
+    width: 100%;
+    max-width: 3000px;
     background-color: teal;
     padding: 0;
     margin: 0;
     /* position: fixed; */
     /* overflow: hidden; */
     overflow-y: hidden;
-    /* background-image: url("./images/Sky.png"); */
+    background-image: url("./images/Sky.png");
+    -ms-overflow-style: none;
 }
+
+body::-webkit-scrollbar {
+    /* display: none; */
+  }
 
 #wrapper {
     display: flex;
     height: 1080px;
-    width: 1920px;
+    width: 3000px;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -21,7 +27,7 @@ body {
 
 #assetWrap {
     height: 1080px;
-    width: 1920px;
+    width: 3000px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -32,31 +38,31 @@ body {
 #layer1 {
     background-image: url('./images/BG_Decor.png');
     height: 1080px;
-    width: 1920px;
+    width: 3000px;
     position: absolute;
 }
 #layer2 {
     background-image: url('./images/Middle_Decor.png');
     height: 1080px;
-    width: 1920px;
+    width: 3000px;
     position: absolute;
 }
 #layer3 {
     background-image: url('./images/Foreground.png');
     height: 1080px;
-    width: 1920px;
+    width: 3000px;
     position: absolute;
 }
 #layer4 {
     background-image: url('./images/Ground.png');
     height: 1080px;
-    width: 1920px;
+    width: 3000px;
     position: absolute;
 }
 
 #playerContainer {
     height: 1080px;
-    width: 1920px;
+    width: 3000px;
     background-color:transparent;
     position: absolute;
     display: flex;
@@ -68,11 +74,35 @@ body {
 #player {
     display: flex;
     align-items: flex-end;
+    justify-content: center;
     height: 500px;
+    width: 500px;
     display: flex;
     position: relative;
     bottom: 0px;
+    left: 60px;
     /* background-color: yellowgreen; */
+}
+
+#playerIMG {
+    line-height: 0;
+    height: 500px;
+    /* background-color: darkorchid; */
+}
+
+#spellStatus {
+    text-align: center;
+    color: teal;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2em;
+    text-align: center;
+    font-weight: bolder;
+    font-style: italic;
+    justify-self: center;
+    align-self: flex-start;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.26);
+    z-index: 3;
 }
 
 #machine {
@@ -91,32 +121,51 @@ body {
     justify-self: center;
 }
 
+#portal {
+    display: normal;
+}
+
 #consoleWrap {
     background-color: transparent;
     display: flex;
-    position: absolute;
-    width: 80%;
+    position: left;
+    z-index: 2;
+    width: auto;
     right: 100px;
-    height: 50%;
+    height: auto;
     align-self: flex-start;
+    justify-content: flex-start;
+    /* background-color: darkgoldenrod; */
     
 }
 
 #consoleMain {
-    left: 40%;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    width: 15%;
     position: fixed;
     text-align: center;
-    background-color: rgba(0, 128, 128, 0.829);
+    background-color: rgba(0, 128, 128, 0.959);
     border-color: darkgoldenrod;
     border-style: solid;
     perspective: 300px;
     border-radius: 40px;
-    padding: 10px;
+    padding: 20px;
+    bottom:500px;
     box-shadow: 5px 7px 1px 1px rgba(63, 63, 62, 0.267), inset 2px 2px 2px 2px rgba(184, 135, 11, 0.568);
 
+}
+
+#buttonWrap {
+    display: flex;
+    flex-direction: row;
 }
 
 img {
     padding: 0;
     height: 0;
+    display: block;
 }

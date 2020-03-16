@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mage Against The Machine</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <main id='wrapper'>
@@ -11,21 +12,20 @@
             <div class="backgrounds" id="layer1"></div>
             <div class="backgrounds" id="layer2"></div>
             <div class="backgrounds" id="layer3"></div>
-            <div class="backgrounds" id="layer4"></div>
             <div id='playerContainer'>
                 <div id='player'>
-                    
+                    <img src="images/Fairy_03__ATTACK_000.png" style="height: 500px;"/>  
                 </div>
                 <div id='machine'>
-                    
+                    <img id= 'machineOne' src="images/idlerobot.gif" style = "height: 600px;"/>
                 </div>
+                <div class="backgrounds" id="layer4"></div>
             </div>
             <div id='portalWrap'>
                 <div id='portal'>
-                    <img src='#'/>
+                    <a href="levelOne.html"><img src='./images/portal.gif' style="height: 400px;"/></a>
                 </div>
             </div>
-            <div class="backgrounds" id="layer5"></div>
         </div>
         <div id='consoleWrap'>
             <div class='consoles' id='consoleMain'>
@@ -41,5 +41,10 @@
             </div>
         </div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+    <script src='main.js' async defer></script>
 </body>
 </html>
