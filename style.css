@@ -94,12 +94,11 @@ body {
 #consoleWrap {
     background-color: transparent;
     display: flex;
-    position: absolute;
-    width: 80%;
+    position: relative;
+    width: 70%;
     right: 100px;
     height: 50%;
-    align-self: flex-start;
-    
+    /* background-color: whitesmoke; */
 }
 
 #consoleMain {
@@ -112,6 +111,7 @@ body {
     perspective: 300px;
     border-radius: 40px;
     padding: 10px;
+    width: 20%;
     box-shadow: 5px 7px 1px 1px rgba(63, 63, 62, 0.267), inset 2px 2px 2px 2px rgba(184, 135, 11, 0.568);
 
 }

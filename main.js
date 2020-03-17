@@ -2,7 +2,8 @@
 
 console.log("...may the odds be ever in our favor.")
 
-///starting game at "level 0" so that the tutorial page's machine object has a power level of zero.
+// opening stats for game level, player, and opponents
+
 let gameLevel = 1
 
 let mage = {
@@ -60,7 +61,7 @@ let levelUP = () => {
         gameLevel++
     }
 
-    console.log('levelUP ran')
+    console.log('levelUP ran. now on game level' + gameLevel)
 }
 
 let attack = (attacker,opponent) => {
@@ -137,25 +138,14 @@ $("#attackButton").click(function(){
 });
 
 $("#portalButton").click(function(){
-    if (mage.spells['attack'] > 0){
-        mage.spells['attack']--
-        $('#attackSpells').text('Attack Spells Left: ' + mage.spells['attack'])
-        attack();
+    if (mage.hp > 0 ){
+        $('#winningMessage').css('display','flex')
     }
 });
 
 $(document).keydown(function(e){
     let $player = $('#player')
     
-    // if($player.css('left') > '0px' && $player.css('left') !== ($( window ).width()-500)+'px'){
-    //     console.log($(window).width()-500)
-    //     if(e.which == "37"){
-    //         $player.animate({left: "-=50"}, 0);
-    //     } 
-    //     else if(e.which == "39") {
-    //         $player.animate({left: "+=50"}, 0);
-    //     }
-    // }
     if(($player.css('left') > '0px') && ($player.css('left') !== ((3000-750) +'px'))){
         console.log('keydown firing')
         switch (e.which){
