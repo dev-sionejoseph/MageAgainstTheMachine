@@ -34,3 +34,15 @@
 
 ### Monday
 1. Tweaks and advance HTML/CSS (animations)
+
+
+## Resources:
+
+### for localstorage research
+https://www.youtube.com/watch?v=k8yJCeuP6I8
+
+### general research
+https://developer.mozilla.org/en-US/docs/Web/JavaScript
+
+### game assets
+craftpix.net
