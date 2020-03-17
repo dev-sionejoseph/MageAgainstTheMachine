@@ -1,5 +1,6 @@
 // check out https://www.vandelaydesign.com/parallax-scrolling-best-practices-examples-and-tutorials/
 
+// localStorage.clear();
 console.log("...may the odds be ever in our favor.")
 
 // opening stats for game level, player, and opponents
@@ -8,14 +9,14 @@ let gameLevel = 1
 
 let mage = {
     name: 'Sage',
-    hp: 200,
-    powerLevel: 1,
+    hp: parseInt(localStorage.getItem('hp')) || 200,
+    powerLevel: parseInt(localStorage.getItem('powerLevel')) || 1,
     spells: {
-        shift: 10,
-        attack: 10
+        shift: parseInt(localStorage.getItem('shift')) || 12,
+        attack: parseInt(localStorage.getItem('attack')) || 12
     }  
 }
-
+ 
 // Variables that populate the stats bar.
 
 $('#HP').text('Health: '+ mage.hp) 
@@ -28,12 +29,22 @@ let machine = {
     name: 'Knier\'s Machine',
     hp: 50*gameLevel,
     powerLevel: 1,
-    enemies : [$('#machine1'),$('#machine2'),
+    enemies :  //JSON.parse(localStorage.getItem("enemies")) || 
+              [$('#machine1'),$('#machine2'),
                $('#machine3'),$('#machine4'),
                $('#machine5'),$('#machine6')]
 }
 
 //modular functions, for spells and leveling up, etc.
+
+let saveStats = () =>{
+    localStorage.setItem('hp', mage.hp);
+    localStorage.setItem('powerLevel', mage.powerLevel);
+    localStorage.setItem('shift', mage.spells['shift']);
+    localStorage.setItem('attack', mage.spells['attack']);
+    localStorage.setItem("enemies", JSON.stringify(machine.enemies));
+    // machine.enemies = JSON.parse(localStorage.getItem("enemies")) // makes the array unreadable.
+}
 
 let isDefeated = (success) =>{
     if (success == true) {
@@ -80,10 +91,8 @@ let attack = (attacker,opponent) => {
         $('#spellStatus').text("A miss!");
     }
 
+    saveStats();
 
-    
-    // console.log(machine.enemies)
-    // levelUP();
 }
 
 const shift = () => {
@@ -102,6 +111,7 @@ const shift = () => {
     
     console.log(success);
     isDefeated(success);
+    saveStats();
 
 }
 
@@ -139,8 +149,10 @@ $("#attackButton").click(function(){
 
 $("#portalButton").click(function(){
     if (mage.hp > 0 ){
-        $('#winningMessage').css('display','flex')
+        $('#winningMessage').css('display','flex')   
     }
+    
+    localStorage.clear();
 });
 
 $(document).keydown(function(e){
