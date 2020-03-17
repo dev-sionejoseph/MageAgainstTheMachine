@@ -107,6 +107,7 @@ body::-webkit-scrollbar {
 
 #machine {
     position: absolute;
+    display: flex;
     float: right;
     right: 300px;
     background-color: transparent;
@@ -121,8 +122,8 @@ body::-webkit-scrollbar {
     justify-self: center;
 }
 
-#portal {
-    display: normal;
+.portal {
+    display: none;
 }
 
 #consoleWrap {
